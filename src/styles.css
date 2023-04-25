@@ -8,52 +8,90 @@
 
 body {
     background-color: #0f0f0f;
+    overflow-x: hidden;
 }
 
 .header {
-    position: relative;
     background-color: #050505;
-    display: flex;
-    height: 25vh;
-    width: 91%;
+    display: grid;
+    width: 100%;
     border-radius: 2vh;
-    padding: 0 8vh;
+    grid-template-columns: 50% 50%;
 }
-
 .header-title {
-    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
     height: 100%;
-    width: 50%;
 }
 
 .title {
+    padding-left: 2px;
     font-family: '04b_30', sans-serif;
     font-size: 12vh;
     color: #ffffff;
 }
 
 .logo {
-    height: 14vh;
-    margin: -1vh;
+    height: 16vh;
     padding-top: 2vh;
     filter: invert();
 }
 
-.link {
+/* .link {
     position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
     height: 100%;
     width: 50%;
-}
+} */
 
 .link-text {
     color: #ffffff;
 }
+
+/*Estilos barra de busqueda*/
+
+.inputGroup {
+  font-family: 'Segoe UI', sans-serif;
+  margin: auto;
+  height: auto;
+  display: flex;
+  align-items: flex-start;
+}
+
+.inputGroup input {
+  font-size: 100%;
+  padding: 0.8em;
+  outline: none;
+  border: 1px solid rgb(255, 255, 255);
+  border-radius: 20px;
+  background-color: #303030; 
+}
+
+.inputGroup label {
+  position: fixed;
+  padding: 0.7em;
+  margin-left: 0.5em;
+  pointer-events: none;
+  transition: all 0.3s ease;
+  color: white;
+  background-color:transparent; 
+}
+
+.inputGroup :is(input:focus, input:valid)~label {
+  transform: translateY(-90%) scale(.9);
+  margin: 0em;
+  margin-left: 1.3em;
+  padding: 0.4em;
+
+}
+
+.inputGroup :is(input:focus, input:valid) {
+  border-color: rgb(255, 255, 255);
+}
+
 
 @media (max-width: 800px) {
     .header {
